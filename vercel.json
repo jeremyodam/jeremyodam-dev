@@ -1,0 +1,27 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "header", "key": "user-agent", "value": "(?i).*(gptbot|chatgpt-user|oai-searchbot|claudebot|claude-user|claude-web|anthropic-ai|google-extended|applebot-extended|perplexitybot|perplexity-user|bytespider|ccbot|cohere-ai|cohere-training|meta-externalagent|meta-externalfetcher|facebookbot|amazonbot|diffbot|omgilibot|omgili|youbot|duckassistbot|mistralai-user|xai-bot|semrushbot-ocob|imagesiftbot|petalbot).*" }
+      ],
+      "missing": [
+        { "type": "query", "key": "blocked" }
+      ],
+      "destination": "/preview-blocked.html?blocked=1",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ]
+}

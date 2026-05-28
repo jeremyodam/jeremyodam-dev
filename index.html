@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeremy Odam</title>
+<meta name="description" content="Operations engineer turning AI into labor. 25 years regulated field ops. Building AI-augmented operational tooling. Open to remote senior IC and fractional roles.">
+<meta property="og:title" content="Jeremy Odam">
+<meta property="og:description" content="Operations engineer turning AI into labor. 25 years regulated field ops.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jeremyodam.com">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060611;
+  --bg-elev: #0e0e1f;
+  --bg-card: #12122a;
+  --fg: #f5f5fa;
+  --fg-dim: #9da0b3;
+  --fg-faint: #5a5d75;
+  --accent: #2563eb;
+  --accent-bright: #3b82f6;
+  --accent-deep: #1e40af;
+  --accent-glow: rgba(37, 99, 235, 0.35);
+  --accent-glow-soft: rgba(59, 130, 246, 0.18);
+  --border: #1a1a35;
+  --border-strong: #2d2d54;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
+  color: var(--fg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: -40%;
+  right: -25%;
+  width: 70%;
+  height: 90%;
+  background: radial-gradient(ellipse at center, var(--accent-glow), transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -35%;
+  left: -25%;
+  width: 65%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, var(--accent-glow-soft), transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 80px 32px 80px;
+  position: relative;
+  z-index: 1;
+}
+.hero {
+  padding: 32px 0 72px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 72px;
+}
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, var(--fg) 0%, #b0b3cc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero .tagline {
+  font-size: clamp(1.25rem, 2.8vw, 1.625rem);
+  color: var(--accent-bright);
+  font-weight: 600;
+  margin-bottom: 28px;
+  letter-spacing: -0.015em;
+  text-shadow: 0 0 32px var(--accent-glow);
+}
+.hero .bio {
+  font-size: 1.0625rem;
+  color: var(--fg-dim);
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cta a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elev);
+  color: var(--fg);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.cta a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.cta a.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px var(--accent-glow), 0 0 0 1px var(--accent-bright) inset;
+  font-weight: 600;
+}
+.cta a.primary:hover {
+  background: var(--accent-bright);
+  border-color: var(--accent-bright);
+  color: #fff;
+  box-shadow: 0 6px 32px var(--accent-glow), 0 0 0 1px var(--accent-bright) inset;
+}
+section {
+  margin-bottom: 72px;
+}
+section h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-faint);
+  margin-bottom: 28px;
+}
+.about p {
+  font-size: 1.0625rem;
+  color: var(--fg);
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+.about p:last-child { margin-bottom: 0; }
+.cases {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.case {
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+.case:hover {
+  border-color: var(--accent-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+}
+.case-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.case h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.case .metric {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--accent-bright);
+  background: var(--accent-glow-soft);
+  border: 1px solid var(--accent-deep);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.case p {
+  color: var(--fg-dim);
+  font-size: 0.9375rem;
+  margin-bottom: 12px;
+}
+.case .stack {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--fg-faint);
+  letter-spacing: -0.01em;
+}
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+.stack-block h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-dim);
+  margin-bottom: 12px;
+}
+.stack-block ul {
+  list-style: none;
+}
+.stack-block li {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: var(--fg);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.stack-block li:last-child { border-bottom: none; }
+.contact {
+  padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+.contact h2 {
+  margin-bottom: 16px;
+}
+.contact p {
+  font-size: 1rem;
+  color: var(--fg-dim);
+  margin-bottom: 24px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact .email {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.0625rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--accent);
+  border: 1px solid var(--accent-bright);
+  border-radius: 8px;
+  box-shadow: 0 4px 24px var(--accent-glow);
+  transition: all 0.15s ease;
+}
+.contact .email:hover {
+  background: var(--accent-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 32px var(--accent-glow);
+}
+footer {
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--fg-faint);
+  font-size: 0.8125rem;
+}
+@media (max-width: 600px) {
+  main { padding: 48px 22px 64px; }
+  .hero { padding-bottom: 48px; margin-bottom: 48px; }
+  section { margin-bottom: 48px; }
+  .case { padding: 20px 22px; }
+  .contact { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1>Jeremy Odam</h1>
+    <p class="tagline">Turning AI into labor. Forward Deployed Engineer.</p>
+    <p class="bio">25 years in regulated field operations. Currently building production AI tools for enterprise operations teams. Pacific Northwest. Remote-first.</p>
+    <div class="cta">
+      <a class="primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jeremy@jeremyodam.com" target="_blank" rel="noopener">Get in touch</a>
+      <a href="https://github.com/jeremyodam" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/jeremy-odam-52a0167b" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>Twenty-five years in regulated field operations. Field operations supervisor. Five AI certifications across Vanderbilt, IBM, and Google, plus FEMA ICS-100, 200, and 300. Two consumer mobile apps in active beta on iOS and Android.</p>
+    <p>Most operators do not learn to build. Most builders do not learn the operations floor. The combination changes what you see and what you build.</p>
+    <p>What I am building is operational tooling that takes AI seriously as labor. Not a copilot. Not a chat widget. Platforms that replace real bottlenecks across enterprise operations, built on my own time with my own tools.</p>
+  </section>
+
+  <section class="work">
+    <h2>Selected Work</h2>
+    <div class="cases">
+      <article class="case">
+        <div class="case-header">
+          <h3>Enterprise AI Use Case Design</h3>
+          <span class="metric">Pilot approved</span>
+        </div>
+        <p>Designed a full suite of AI use cases for a large enterprise operation, spanning operations, compliance, fleet, scheduling, dispatch, and reporting. Aligned every use case to one of the five executive-level strategic goals already on the leadership team's roadmap. That is the move that got the pilot approved. Defined system prompts, RAG architecture, and integration requirements. The use case work became the architectural blueprint for the platform.</p>
+        <div class="stack">Use case design &middot; RAG architecture &middot; Multi-module system design &middot; Enterprise stakeholder alignment.</div>
+      </article>
+
+      <article class="case">
+        <div class="case-header">
+          <h3>Fleet + Inventory Management</h3>
+          <span class="metric">Scan &rarr; logged</span>
+        </div>
+        <p>Field-deployable fleet and inventory tracking tool. Reads license plates via computer vision to automatically log vehicles, assigns tools and equipment to field crews, and maintains a live inventory sheet. Replaces manual clipboard-and-spreadsheet workflows with a scan-and-done process built for the operations floor.</p>
+        <div class="stack">Plate Recognizer API &middot; Google Sheets API &middot; Claude API &middot; Vercel serverless.</div>
+      </article>
+
+      <article class="case">
+        <div class="case-header">
+          <h3>Vertical AI Platform</h3>
+          <span class="metric">Multi-product, 1 backend</span>
+        </div>
+        <p>Designed and built a multi-product AI platform covering a full suite of operational modules across enterprise use cases. Streaming Claude backend with multi-tenant architecture. Branded, scoped, and deployable per enterprise client in days.</p>
+        <div class="stack">Serverless backend &middot; Supabase &middot; Vector retrieval &middot; Tenant-isolated by design.</div>
+      </article>
+
+      <article class="case">
+        <div class="case-header">
+          <h3>DigBuddy: 811 Compliance Assistant</h3>
+          <span class="metric">Bilingual · App Store pending</span>
+        </div>
+        <p>Conversational 811 dig law compliance assistant for excavation contractors and utility damage prevention teams. Field workers ask natural-language questions about locate requirements, hand-dig zones, and notification timing. Bilingual (English and Spanish) to serve the actual field workforce. Built on the same Claude streaming backend as the ops platform.</p>
+        <div class="stack">Claude API &middot; Bilingual NLP &middot; React &middot; Vercel serverless.</div>
+      </article>
+
+      <article class="case">
+        <div class="case-header">
+          <h3>PoolAndSpa Buddy</h3>
+          <span class="metric">In beta</span>
+        </div>
+        <p>Consumer pool and spa water chemistry assistant. Users log their pH, chlorine, alkalinity, and more, then get AI-powered recommendations on exactly what to add and how much. Replaces paper test strips and guesswork with guided, chemistry-aware fixes. Same Claude streaming backend as the ops platform.</p>
+        <div class="stack">Claude API &middot; React &middot; Vercel serverless &middot; Capacitor (iOS, Android).</div>
+      </article>
+
+      <article class="case">
+        <div class="case-header">
+          <h3>GarageBuddy AI</h3>
+          <span class="metric">iOS + Android beta</span>
+        </div>
+        <p>Consumer DIY auto diagnostics app. Pairs with OBD-II hardware to diagnose vehicle issues, surface parts, and route to service. Capacitor-wrapped from the same web platform that powers the ops modules. Same architecture, native shell. Proves the platform extends from B2B SaaS to consumer mobile without rewriting the core.</p>
+        <div class="stack">Capacitor. iOS + Android native shells. Same Claude streaming backend.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="stack-section">
+    <h2>Stack &amp; Credentials</h2>
+    <div class="stack-grid">
+      <div class="stack-block">
+        <h4>Stack</h4>
+        <ul>
+          <li>Claude API (Sonnet 4.5)</li>
+          <li>React, TypeScript, Next.js</li>
+          <li>Vercel serverless</li>
+          <li>Supabase, Postgres, pgvector</li>
+          <li>Capacitor (iOS, Android)</li>
+          <li>Python (RAG pipelines)</li>
+        </ul>
+      </div>
+      <div class="stack-block">
+        <h4>AI Certifications</h4>
+        <ul>
+          <li>Vanderbilt: Claude Code</li>
+          <li>Vanderbilt: AI Agents and Agentic AI</li>
+          <li>Vanderbilt: OpenAI GPTs</li>
+          <li>IBM: Prompt Engineering</li>
+          <li>Google: GenAI Leader</li>
+        </ul>
+      </div>
+      <div class="stack-block">
+        <h4>Operations</h4>
+        <ul>
+          <li>FEMA ICS-100, 200, 300</li>
+          <li>Regulated field ops, 25 years</li>
+          <li>Field supervisor, large enterprise workforce</li>
+          <li>Multi-system platform integration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Open To</h2>
+    <p>Remote senior IC and fractional roles in AI implementation, AI operations, and enterprise ops automation. Forward Deployed Engineer, Applied AI Architect, Director of AI Implementation, Fractional COO at AI-native startups.</p>
+    <a class="email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jeremy@jeremyodam.com" target="_blank" rel="noopener">jeremy@jeremyodam.com</a>
+  </section>
+
+  <footer>
+    Pacific Northwest. Remote-first. Take good care.
+  </footer>
+</main>
+</body>
+</html>
